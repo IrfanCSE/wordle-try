@@ -1,0 +1,11 @@
+<div id="board-container">
+  <div id="container" style="width: 0px; height: 0px;">
+    <form autocomplete="off" class="container">
+      <div class="input-row" *ngFor="let item of inputWord;let indexOfRow=index;">
+        <div class="input-col" *ngFor="let i of item;let indexOfCol=index;">
+          <input autocomplete="" style="cursor: pointer;" [ngClass]="i.ismatch==true? 'match':i.ismatch==false?'not-match':'none'" class="input-box" type="text" [id]="indexOfRow.toString().concat(indexOfCol.toString())" maxlength="1" [placeholder]="i.value" (keypress)="next($event)">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
